@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//useState 함수를 가져온다.
 
 function Form(props) {
 

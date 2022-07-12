@@ -7,9 +7,9 @@
   <body>
     <div id="content"></div>
     <script type="text/javascript">
-      let h1 = React.createElement('h1', null, 'HelloWorld!')
+      let h1 = React.createElement('h1', null, 'HelloWorld!') // createElement()의 세 번째 매개변수가 문자열이면, 이는 생성하는 엘리먼트의 텍스트 값이다.
       ReactDOM.render(
-        React.createElement('div', null, h1, h1),
+        React.createElement('div', null, h1, h1), // 세 번째 또는 그 이후의 메개변수가 문자열이 아니면, 이는 새로 생성하는 엘리먼트의 자식 엘리먼트이다.
         document.getElementById('content')
       )
     </script>

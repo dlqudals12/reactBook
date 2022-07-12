@@ -11,6 +11,15 @@
  - 팀의 생산성 향상: 전문 개발자 외에도 개발 지식이 있는 팀윈이 있다면 직접 코드를 수정할 수도 있다. JSX가 HTML과 비슷하기 때문이다.
  - 문법 오류와 코드량 감소: 작성해야 할 코드가 줄어들며, 이는 곧 실수나 반복으로 인한 스트레스를 줄여준다.
 
- ## 기록
+ ## React와 JSX의 까다로운 부분
 
- - varName -> 변수 이름
+ - 자식 엘리먼트가 없거나 단일 태그를 사용할 때는 태그를 닫을 때 반드시 슬래시(/)를 넣어야 한다.
+ - 특수문자를 노출하려면 베열로 출력해서 여러 개의 문자열로 분리할 수 있다. 소스 코드에 특수문자를 직접 복사해서 넣는다. 특수문자를 \u로 시작하는 이스케이프 시퀀스로 바꾼 후에 유니코드 번호를 찾아 사용한다. String.formCharCode(xharCodeNumber)를 이용해서 유니코드 번호에서 문자로 변경한다.
+ - DOM 노드에 추가 데이터를 전달해야 하는 경우가 있다. 이것은 안티패턴으로 DOM을 데이터베이스나 로컬 스토리지처럼 사용하지 않아야 한다. 그럼에도 불구하고 사용자 정의 속성을 랜더링해야 한다면 속성의 접두사로 data-를 사용한다.(HTML object-id="" React data-Object-id="")
+ + JSX와 스타일 속성은 HTML과 다르게 동작한다. JSC에서는 문자열 대신 자바스크립트 객체를 전달하고, CSS 속성은 카멜 표기법으로 작성한다.
+ + background-image -> backgroundImage
+ + font-size -> fontSize
+ + font-family -> fontFamily
+ - React 와 JSX는 class와 for를 제외하면 표준 HTML 속성을 모두 사용할 수 있다. class와 for는 자바스크립트와 ECMAScript의 예약어고, JSX는 일반 자바스크립트로 변환해서 사용한다. 따라서 class와 for 대신에 각각 className과 htmlFor를 사용한다.
+ - disabled, required, checked, autofocus, readOnly 같은 일부 속성은 폼 요소에만 사용한다. 여기에서 기억해야 할 가장 중요한 요소는 속성 값을 {} 안에 반드시 자바스크립트 식으로 작성 해야 한다는 정미앋. 문자열로 입력하지 않아야 한다. 
+ 
